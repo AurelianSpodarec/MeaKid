@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-function HomeView() {
+function NotFound() {
     return (
         <div>
-            HOME VIEW
+            NotFound
         </div>
     )
 }
 
-export default HomeView;
+export default NotFound;

@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-function HomeView() {
+function ProductItem() {
     return (
         <div>
-            HOME VIEW
+            Product Item
         </div>
     )
 }
 
-export default HomeView;
+export default ProductItem;
