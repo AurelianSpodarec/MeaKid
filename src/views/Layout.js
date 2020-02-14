@@ -5,28 +5,7 @@ import { Header, Footer } from './../components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import HomeView from './Home/HomeView';
-import ProductList from './ProductList/ProductList';
-// import ProductItem from './ProductItem/ProductItem';
-import NotFound from './NotFound/NotFound'
-
-const routes = [
-    {
-        path: "/",
-        component: HomeView,
-
-    },
-    {
-        path: "/product-list",
-        component: ProductList,
-
-    },
-    {
-        path: "*",
-        component: NotFound,
-
-    }
-]
+import Routing from './Router';
 
 function Layout() {
     return (
@@ -35,7 +14,7 @@ function Layout() {
 
             <Switch>
                 {
-                    routes.map((route =>
+                    Routing.map((route =>
                         <Route exact path={route.path} component={route.component} />
                     ))
                 }
