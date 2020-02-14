@@ -1,11 +1,21 @@
 import React from 'react';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+} from 'reactstrap';
 
 
-function ProductItem() {
+const ProductItem = ({ product }) => {
+
+
     return (
-        <div>
-            Product Item
-        </div>
+        <Card>
+            <CardImg top width="100%" src={product.image} alt="Card image cap" />
+            <CardBody>
+                <CardTitle>{product.name}</CardTitle>
+
+            </CardBody>
+        </Card>
     )
 }
 

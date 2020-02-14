@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import HomeView from './Home/HomeView';
 import ProductList from './ProductList/ProductList';
@@ -11,10 +11,12 @@ class Routes extends Component {
         return (
             <div>
                 <Router>
-                    <Route exact path="/" component={HomeView} />
-                    <Route exact path="/product-list" component={ProductList} />
-                    <Route exact path={`/product-list/:id`} component={ProductItem} />
-                    <Route path="*" component={NotFound} />
+                    <Switch>
+                        <Route exact path="/" component={HomeView} />
+                        <Route exact path="/product-list" component={ProductList} />
+                        <Route exact path="/product-list/:id" component={ProductItem} />
+                        <Route path="*" component={NotFound} />
+                    </Switch>
                 </Router>
             </div>
         )
