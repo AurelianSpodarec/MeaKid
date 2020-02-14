@@ -1,4 +1,4 @@
-[
+export default [
     {
         "id": 1,
         "name": "Black Syntetic Jacket",
@@ -101,6 +101,7 @@
     },
     {
         "id": 6,
+        "sale": true,
         "name": "Black Syntetic Jacket",
         "description": "",
         "image": "https://images.pexels.com/photos/1460036/pexels-photo-1460036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -115,7 +116,8 @@
         "tags": [],
         "price": {
             "currency_code": "GBP",
-            "amount": 455.99
+            "amount": 455.99,
+            "sale_amount": 299.99,
         },
         "rating": 5,
     }

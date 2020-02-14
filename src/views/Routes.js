@@ -9,16 +9,14 @@ import NotFound from './NotFound/NotFound'
 class Routes extends Component {
     render() {
         return (
-            <div>
-                <Router>
-                    <Switch>
-                        <Route exact path="/" component={HomeView} />
-                        <Route exact path="/product-list" component={ProductList} />
-                        <Route exact path="/product-list/:id" component={ProductItem} />
-                        <Route path="*" component={NotFound} />
-                    </Switch>
-                </Router>
-            </div>
+
+            <Switch>
+                <Route exact path="/" component={HomeView} />
+                <Route exact path="/product-list" component={ProductList} />
+                <Route exact path="/product-list/:id" component={ProductItem} />
+                <Route path="*" component={NotFound} />
+            </Switch>
+
         )
     }
 }

@@ -5,14 +5,18 @@ import {
 } from 'reactstrap';
 
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, loading }) => {
 
 
     return (
         <Card>
-            <CardImg top width="100%" src={product.image} alt="Card image cap" />
+            {loading ? "Loading" :
+                <CardImg top width="100%" src={product.image} alt="Card image cap" />
+            }
             <CardBody>
-                <CardTitle>{product.name}</CardTitle>
+                {loading ? <CardTitle>Loading</CardTitle> :
+                    <CardTitle>{product.name}</CardTitle>
+                }
 
             </CardBody>
         </Card>
