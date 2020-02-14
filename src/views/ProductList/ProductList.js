@@ -21,14 +21,13 @@ function ProductList() {
     function getProducts() {
         if (isLoading) {
             return [...Array(9)].map((x, i) =>
-                <Col md="4">
+                <Col key={i} md="4">
                     <ProductItem loading />
                 </Col>
             )
-        }
-        else if (productList.length) {
+        } else if (productList.length) {
             return productList.map(product =>
-                <Col md="4">
+                <Col key={product.id} md="4">
                     <ProductItem product={product} />
                 </Col>
             )
