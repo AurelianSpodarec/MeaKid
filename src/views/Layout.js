@@ -7,23 +7,39 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import HomeView from './Home/HomeView';
 import ProductList from './ProductList/ProductList';
-import ProductItem from './ProductItem/ProductItem';
+// import ProductItem from './ProductItem/ProductItem';
 import NotFound from './NotFound/NotFound'
 
+const routes = [
+    {
+        path: "/",
+        component: HomeView,
 
-//Import router
+    },
+    {
+        path: "/product-list",
+        component: ProductList,
+
+    },
+    {
+        path: "*",
+        component: NotFound,
+
+    }
+]
+
 function Layout() {
     return (
         <Router>
             <Header />
 
             <Switch>
-                <Route exact path="/" component={HomeView} />
-                <Route exact path="/product-list" component={ProductList} />
-                {/* <Route exact path="/product-list/:id" component={ProductItem} /> */}Inside up
-                <Route path="*" component={NotFound} />
+                {
+                    routes.map((route =>
+                        <Route exact path={route.path} component={route.component} />
+                    ))
+                }
             </Switch>
-
 
             <Footer />
         </Router>
