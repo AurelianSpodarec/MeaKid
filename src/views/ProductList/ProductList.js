@@ -9,11 +9,13 @@ import { Link } from 'react-router-dom';
 function ProductList() {
     // Low in stock is 30
     const [productList, setProductList] = useState([]);
+    const [productListLength, setProductListLength] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         setTimeout(() => {
             setProductList(jackets)
+            setProductListLength(jackets.length)
             setIsLoading(false)
         }, 1000)
     }, [])
@@ -48,7 +50,7 @@ function ProductList() {
 
                 <Col md="9">
                     <Row>
-                        <h3>Jackets <span>(3,232)</span></h3>
+                        <h3>Jackets <span>({productListLength})</span></h3>
                         <Link href="/home">MMMMMMMMMMM</Link>
                     </Row>
                     <Row>

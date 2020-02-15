@@ -5,20 +5,14 @@ import { Header, Footer } from './../components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Routing from './Router';
+import Routes from './Routes';
 
 function Layout() {
     return (
         <Router>
             <Header />
 
-            <Switch>
-                {
-                    Routing.map((route =>
-                        <Route exact path={route.path} component={route.component} />
-                    ))
-                }
-            </Switch>
+            <Routes />
 
             <Footer />
         </Router>
