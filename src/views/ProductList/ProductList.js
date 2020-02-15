@@ -4,6 +4,7 @@ import ProductItem from './../ProductItem/ProductItem';
 
 import jackets from './../../json/products/jackets';
 import { Link } from 'react-router-dom';
+import { Skeleton } from '../../components';
 
 
 function ProductList() {
@@ -19,8 +20,8 @@ function ProductList() {
             setIsLoading(false)
         }, 1000)
     }, [])
-
-    function getProducts() {
+    // console.log(productList)
+    function renderProducts() {
         if (isLoading) {
             return [...Array(9)].map((x, i) =>
                 <Col key={i} md="4">
@@ -35,7 +36,7 @@ function ProductList() {
             )
         }
 
-        return "Not Found COmponent"
+        return "Not products found. Try again later. :-("
     }
 
 
@@ -45,16 +46,17 @@ function ProductList() {
                 <Col md="3">
                     <aside>
                         <h3>Sidebar</h3>
+                        <Skeleton />
                     </aside>
                 </Col>
 
                 <Col md="9">
                     <Row>
                         <h3>Jackets <span>({productListLength})</span></h3>
-                        <Link href="/home">MMMMMMMMMMM</Link>
                     </Row>
                     <Row>
-                        {getProducts()}
+                        {renderProducts()}
+                        {/* <Products */}
                     </Row>
 
                 </Col>

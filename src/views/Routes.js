@@ -25,7 +25,7 @@ const Routing = [
 const Routes = () => {
     return <Switch>
         {Routing.map((route =>
-            <Route exact path={route.path} component={route.component} />
+            <Route key={route.path} exact path={route.path} component={route.component} />
         ))}
     </Switch>
 }

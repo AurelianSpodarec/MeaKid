@@ -5,8 +5,18 @@ import {
 } from 'reactstrap';
 
 
+
 const ProductItem = ({ product, loading }) => {
 
+    function renderPrice() {
+        if (loading) {
+            return "Loading"
+        } else if (product.price.sale_amount) {
+            return `${product.price.sale_amount} from ${product.price.amount}`
+        }
+
+        return `${product.price.amount}`;
+    }
 
     return (
         <Card>
@@ -17,7 +27,8 @@ const ProductItem = ({ product, loading }) => {
                 {loading ? <CardTitle>Loading</CardTitle> :
                     <CardTitle>{product.name}</CardTitle>
                 }
-
+                {renderPrice()}
+                <Button>Add to card</Button>
             </CardBody>
         </Card>
     )
