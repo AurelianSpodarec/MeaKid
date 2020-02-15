@@ -1,6 +1,6 @@
-import Footer from './Footer';
-import Header from './Header';
-import Skeleton from './Skeleton';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import Skeleton from './Skeleton/Skeleton';
 
 export {
     Footer,

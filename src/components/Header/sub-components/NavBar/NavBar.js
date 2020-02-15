@@ -14,6 +14,10 @@ import {
     NavbarText
 } from 'reactstrap';
 
+import CartDropdown from './../CartDropdown/CartDropdown'
+
+
+
 const NavBar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -32,9 +36,14 @@ const NavBar = (props) => {
                         <NavItem>
                             <NavLink href="/product-list">Product List</NavLink>
                         </NavItem>
-
+                        <NavItem>
+                            <NavLink href="/checkout">Checkout</NavLink>
+                        </NavItem>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
+
+
+                    <CartDropdown />
+
                 </Collapse>
             </Navbar>
         </div>
