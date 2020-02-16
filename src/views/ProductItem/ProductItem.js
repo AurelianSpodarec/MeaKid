@@ -4,9 +4,14 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
-
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from './../../stores/actions/cartActions';
 
 const ProductItem = ({ product, loading }) => {
+
+    // const counter = useSelector(state => state.cart)
+    const dispatch = useDispatch();
+
 
     function renderPrice() {
         if (loading) {
@@ -28,7 +33,9 @@ const ProductItem = ({ product, loading }) => {
                     <CardTitle>{product.name}</CardTitle>
                 }
                 {renderPrice()}
-                <Button>Add to card</Button>
+                {loading ? "Loading" :
+                    <Button onClick={() => dispatch(addItem(product))}>Add to card</Button>
+                }
             </CardBody>
         </Card>
     )
