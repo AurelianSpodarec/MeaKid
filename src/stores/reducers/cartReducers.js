@@ -1,4 +1,6 @@
-const cartReducer = (state = [], action) => {
+import jackets from './../../json/products/jackets';
+
+const cartReducer = (state = [...jackets], action) => {
     switch (action.type) {
         case 'ADD_ITEM':
             return [...state, action.payload];

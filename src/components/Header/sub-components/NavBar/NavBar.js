@@ -6,18 +6,14 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
+    NavLink
 } from 'reactstrap';
 
 import CartDropdown from './../CartDropdown/CartDropdown'
 
 
 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const NavBar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -26,21 +22,20 @@ const NavBar = (props) => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">Duba</NavbarBrand>
+                <NavbarBrand><Link to="/">Duba</Link></NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/">Home</NavLink>
+                            <NavLink><Link to="/">Home</Link></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/product-list">Product List</NavLink>
+                            <NavLink><Link to="/product-list">Product List</Link></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/checkout">Checkout</NavLink>
+                            <NavLink><Link to="/checkout">Checkout</Link></NavLink>
                         </NavItem>
                     </Nav>
-
 
                     <CartDropdown />
 

@@ -5,6 +5,7 @@ import HomeView from './Home/HomeView';
 import ProductList from './ProductList/ProductList';
 // import ProductItem from './ProductItem/ProductItem';
 import NotFound from './NotFound/NotFound'
+import CheckoutView from './Checkout/CheckoutView'
 
 const Routing = [
     {
@@ -14,6 +15,11 @@ const Routing = [
     {
         path: "/product-list",
         component: ProductList,
+
+    },
+    {
+        path: "/checkout",
+        component: CheckoutView,
 
     },
     {

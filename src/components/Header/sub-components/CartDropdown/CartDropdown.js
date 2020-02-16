@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-import { ButtonDropdown, Button, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { ButtonDropdown, CardImg, Button, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 
 import { useSelector, useDispatch } from 'react-redux';
-// import { increment } from './../../../../stores/actions/cartActions';
 
 const CartDropdown = (props) => {
     const [dropdownOpen, setOpen] = useState(false);
@@ -16,6 +15,7 @@ const CartDropdown = (props) => {
         if (cart.length) {
             return cart.map(product =>
                 <DropdownItem key={product.id}>
+                    <CardImg top width="100%" src={product.image} alt="Card image cap" />
                     {product.name}
                 </DropdownItem>
             )
