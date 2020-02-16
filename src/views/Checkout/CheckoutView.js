@@ -12,9 +12,12 @@ function Checkout() {
     const [totalPrice, setTotalPrice] = useState(0)
 
     function getTotalPrice() {
-        const a = cart.map(item => item.price.amount).reduce((prev, next) => prev + next).toFixed(2)
-        // a.toFixed(2)
-        setTotalPrice(a)
+        console.log("MM", cart.length)
+        if (!cart.length) return;
+        const totalPriceOfItems = cart.map(item => item.price.amount).reduce((prev, next) => prev + next).toFixed(2)
+        setTotalPrice(totalPriceOfItems)
+
+        return 0;
     }
 
     useEffect(() => {

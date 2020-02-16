@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem } from './../../stores/actions/cartActions';
+import { addItemToCart } from './../../stores/actions/cartActions';
 
 const ProductItem = ({ product, loading }) => {
 
@@ -34,7 +34,7 @@ const ProductItem = ({ product, loading }) => {
                 }
                 {renderPrice()}
                 {loading ? "Loading" :
-                    <Button onClick={() => dispatch(addItem(product))}>Add to card</Button>
+                    <Button onClick={() => dispatch(addItemToCart(product))}>Add to card</Button>
                 }
             </CardBody>
         </Card>
