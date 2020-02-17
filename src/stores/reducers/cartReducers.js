@@ -14,16 +14,16 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'ADD_ITEM_TO_CART':
 
-            let newItem = state.items.find(item => item.id === action.id)
-            if (newItem) {
-                return { ...state.item, items: [...state.items, newItem.quantity + 1] }
-            }
+        // let newItem = state.items.find(item => item.id === action.id)
+        // if (newItem) {
+        //     return { ...state.item, items: [...state.items, newItem.quantity + 1] }
+    }
 
-            return [...state, action.payload];
+    return [...state.items, action.payload];
         case 'DELETE_ITEM':
-            return state;
+return state;
         default:
-            return state;
+return state;
     }
 }
 
