@@ -1,14 +1,9 @@
 import jackets from './../../json/products/jackets';
 
-// const cartReducer = (state = [...jackets], action) => {
-
 const INITIAL_STATE = {
     items: [],
     total: 0,
 }
-
-// Total Price of the items
-// 
 
 const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -28,5 +23,3 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 }
 
 export default cartReducer;
-
-// Item details. Selected Size. Quantity.
